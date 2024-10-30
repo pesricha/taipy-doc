@@ -18,9 +18,31 @@ This is the list of changes to Taipy releases as they were published.
     Note that we support the latest major version and the one before that. Because we have
     released Taipy 4.0, support and documentation for Taipy versions older than 3.0 are disrupted.
 
-# Community edition: 4.0
+# Community edition: 4.1 ( IN PROGRESS )
 
 (Work in progress - the following links are invalid for the time being)
+
+[`taipy` 4.1](https://pypi.org/project/taipy/4.1.0/) depends on the latest
+[`taipy-common` 4.1](https://pypi.org/project/taipy-common/4.1.0/),
+[`taipy-gui` 4.1](https://pypi.org/project/taipy-gui/4.1.0/),
+[`taipy-core` 4.1](https://pypi.org/project/taipy-core/4.1.0/),
+[`taipy-templates` 4.1](https://pypi.org/project/taipy-templates/4.1.0/), and
+[`taipy-rest` 4.1](https://pypi.org/project/taipy-rest/4.1.0/) packages.
+
+## Known issues
+
+## New Features
+
+## Improvements and changes
+
+<h4><strong><code>taipy-core</code></strong> 4.1.0</h4>
+
+- `S3ObjectDataNode^` now supports all the parameters of the AWS APIs.<br/>
+  See [issue #1858](https://github.com/Avaiga/taipy/issues/1858).
+
+## Significant bug fixes
+
+# Community edition: 4.0
 
 [`taipy` 4.0](https://pypi.org/project/taipy/4.0.0/) depends on the latest
 [`taipy-common` 4.0](https://pypi.org/project/taipy-common/4.0.0/),
