@@ -8,7 +8,11 @@ img: inventory_forecasting/images/thumbnail.png
 ---
 
 
-This application is designed to help businesses forecast inventory levels and simulate purchasing decisions to optimize supply chain operations. The user can input how much demand he expects for each item, their production and delivery time and the minimal stock he wants to have. The application will then calculate the optimal purchasing decisions to satisfy the demand.
+This application is designed to help businesses forecast inventory levels and simulate
+purchasing decisions to optimize supply chain operations. The user can input how much demand
+he expects for each item, their production and delivery time, and the minimal stock he wants to
+have. The application will then calculate the optimal purchasing decisions to satisfy the
+demand.
 
 !!! note "Taipy Enterprise edition"
 
