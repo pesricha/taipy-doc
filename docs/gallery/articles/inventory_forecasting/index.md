@@ -37,7 +37,8 @@ The user can input the following parameters for each item:
 
 ![Data page](images/scenario.png){width=90% : .tp-image-border }
 
-After changing the parameters, the user can start the simulation by pressing the "Submit" button at the bottom right.
+After changing the parameters, the user can start the simulation by pressing the "Submit"
+button at the bottom right.
 
 The app will then show the inventory of all items, the recommended purchase orders, and the simulated inventory levels for each items in plots.
 
