@@ -40,6 +40,7 @@ The user can input the following parameters for each item:
 After changing the parameters, the user can start the simulation by pressing the "Submit"
 button at the bottom right.
 
-The app will then show the inventory of all items, the recommended purchase orders, and the simulated inventory levels for each items in plots.
+The app will then show the inventory of all items, the recommended purchase orders, and the
+simulated inventory levels for each item in plots.
 
 ![Scenario Creation](images/visualization.png){width=90% : .tp-image-border }
