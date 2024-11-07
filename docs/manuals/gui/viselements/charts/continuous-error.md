@@ -1,3 +1,0 @@
-## Continuous error bars
-
-TODO
