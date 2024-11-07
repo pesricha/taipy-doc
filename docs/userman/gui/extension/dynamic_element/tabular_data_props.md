@@ -208,4 +208,8 @@ if __name__ == "__main__":
 
 When you run this application, the page displays the element like this:
 
-
+<figure>
+    <img src="../chess_game-d.png" class="visible-dark"  width="80%"/>
+    <img src="../chess_game-l.png" class="visible-light" width="80%"/>
+    <figcaption>Chess game</figcaption>
+</figure>
