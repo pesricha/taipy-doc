@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /en/latest/ # Allow all robots to access the latest version of the documentation
+Disallow: /en/release-*/ # Disallow all other versions except 'latest'
+
+Sitemap: https://docs.taipy.io/sitemap.xml
