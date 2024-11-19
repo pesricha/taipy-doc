@@ -464,7 +464,7 @@ in order to properly connect to the Microsoft Entra ID service:
 
     === "Using Python configuration"
         ```python title="main.py"
-        Config.configure_authentication(protocol="ldap",
+        Config.configure_authentication(protocol="entra_id",
                                         client_id="my-client-id",
                                         tenant_id="my-tenant-id",
                                         secret_key = "my-ultra-secure-and-ultra-long-secret",
