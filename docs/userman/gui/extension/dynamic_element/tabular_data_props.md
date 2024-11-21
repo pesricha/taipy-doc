@@ -60,7 +60,7 @@ The detailed explanation of the code is as follows:
 
 The React component for the *game_table* element is defined as follows:
 
-```jsx title="GameTable.tsx" linenums="1"
+```tsx title="GameTable.tsx" linenums="1"
 import React, { useEffect, useMemo, useState } from "react";
 import {
     createRequestDataUpdateAction,
