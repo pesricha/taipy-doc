@@ -1,8 +1,7 @@
-The previous section on [Tabular properties](tabular_data_props.md) explains creating dynamic elements for tabular data values.
-For collections like lists, a more complex setup is needed to support dynamically updating arrays. In Taipy GUI, lists
-can bind to Python variables or expressions, instantly reflecting changes in the UI. Custom elements handling lists must
-declare their properties, similar to tabular properties, using the PropertyType class to define array formats. This allows
-multidimensional data binding, so any changes to the list refresh the UI display.
+In the previous section, we discussed creating dynamic elements. In Taipy GUI, lists can be bound to Python variables or
+expressions, allowing real-time updates in the UI. Custom elements that handle lists should define their properties using
+the `PropertyType^` class to specify the format of list values. This setup supports multidimensional data binding, ensuring
+that any changes to the list automatically refresh the display.
 
 # Using list of values
 
@@ -34,17 +33,13 @@ class ExampleLibrary(ElementLibrary):
             )
         }
 ```
-The declaration of this dynamic element is very similar to what we created in the
-[Tabular properties](tabular_data_props.md). The detailed explanation of the code is as follows:
+The detailed explanation of the code is as follows:
 
 - The *visual_label_list* element includes two properties: *lov* and *sort*.
-- The *lov* property has the type *PropertyType.lov*, meaning it holds a list of value and is dynamic.
-- The *sort* property has the type *PropertyType.string*, meaning it holds a string value. Because this property is
-  static, it would nevertheless not reflect changes in the bound variable values.
-- The *get_name()* method in the *ExampleLibrary* class returns the name of the library as a string. This name is used
-  to identify the library within the Taipy GUI framework.
-- The *get_elements()* method in the *ExampleLibrary* class returns a dictionary of all elements that are part of this
-  library. Each element is defined with its properties and associated React component.
+- The *lov* property has the type `PropertyType.lov^`, meaning it holds a list of values and is dynamic.
+- The *sort* property has the type `PropertyType.string^`, meaning it holds a string value. Because this property is
+  static, it is not updated automatically should the bound variable be changed.
+- get_name() and get_elements() remain the same as in the previous stages of building the extension library example.
 
 ## Creating the React component {data-source="gui:doc/extension/example_library/front-end/src/VisualLabelList.tsx"}
 
@@ -104,13 +99,13 @@ export default VisualLabelList;
 
 The detailed explanation of the code is as follows:
 
-- The *lov* property, defined as *PropertyType.lov*, expects a value of type
-  [*LoV*](../../../../refmans/reference_guiext/type-aliases/LoV.md).
-- Using Taipy GUI’s [*useLovListMemo*](../../../../refmans/reference_guiext/functions/useLovListMemo.md) hook, we
+- The *lov* property, defined as `PropertyType.lov^`, expects a value of type
+  [`LoV`](../../../../refmans/reference_guiext/type-aliases/LoV.md).
+- Using Taipy GUI’s [`useLovListMemo()`](../../../../refmans/reference_guiext/functions/useLovListMemo.md) hook, we
   create a memoized list of values based on this *lov* property, efficiently managing the component’s list of values.
 - To enhance this list, we can apply sorting using the *sort* property, which accepts either “asc” for ascending or
-  “desc” for descending order. Since *sort* remains static, a default value is unnecessary: when set to “asc” or
-  “desc,” the list is sorted accordingly, while an unset *sort* property displays values in their original order.
+  “desc” for descending order. Since *sort* is static, a default value is unnecessary. When set to "asc" or "desc," the
+  list is sorted accordingly. If *sort* is not defined in the script, the list displays values in their original order.
 
 ## Exporting the React component {data-source="gui:doc/extension/example_library/front-end/src/index.ts"}
 
@@ -140,7 +135,7 @@ page = """
 """
 ```
 
-In this example, the *languages* list contains a [*list of value*](../../binding.md#list-of-values),
+In this example, the *languages* list contains a [`list of value`](../../binding.md#list-of-values),
 each with a name and an icon. The *page* variable contains a string that uses the *visual_label_list* element to display
 the list of languages in ascending order. The *sort* property is set to “asc” to sort the list alphabetically by
 language name. When the page is rendered, the list will display the languages in the specified order.
