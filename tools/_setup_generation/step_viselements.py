@@ -118,12 +118,15 @@ class VisElementsStep(SetupStep):
         self.mui_icons = sorted(self.mui_icons)
         if current_icons != self.mui_icons:
             print("NOTE - Generating MUI icons")
-            MUI_URL = "http://raw.githubusercontent.com/mui/material-ui/refs/heads/master/packages/mui-icons-material/lib/{icon}.js"
+            github_token = os.environ.get("GITHUB_TOKEN", "")
+            if github_token:
+                github_token = f"https://{github_token}"
+            MUI_URL = "raw.githubusercontent.com/mui/material-ui/refs/heads/master/packages/mui-icons-material/lib/{icon}.js"
 
             def extract_svg_paths(icon: str) -> list[str]:
                 url = MUI_URL.format(icon=icon)
                 print(f"NOTE - Trying to download icon at {url}")
-                response = requests.get(url)
+                response = requests.get(github_token + url)
                 if response.status_code != 200:
                     print(f"ERROR - Couldn't find source for icon {icon} - Status code={response.status_code} ({response.reason})")
                     return None
