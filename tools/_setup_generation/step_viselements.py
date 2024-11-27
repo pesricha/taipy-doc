@@ -117,14 +117,15 @@ class VisElementsStep(SetupStep):
         search_mui_icons(self.FE_DIR_PATH)
         self.mui_icons = sorted(self.mui_icons)
         if current_icons != self.mui_icons:
-            print("NOTE: Generating MUI icons")
+            print("NOTE - Generating MUI icons")
             MUI_URL = "https://raw.githubusercontent.com/mui/material-ui/refs/heads/master/packages/mui-icons-material/lib/{icon}.js"
 
             def extract_svg_paths(icon: str) -> list[str]:
                 url = MUI_URL.format(icon=icon)
+                print(f"NOTE - Trying to download icon at {url}")
                 response = requests.get(url)
                 if response.status_code != 200:
-                    raise SystemError(f"WARNING - Couldn't find source for icon {icon}")
+                    print(f"ERROR - Couldn't find source for icon {icon} - Status code={response.status_code} ({response.reason})")
                 return [m[1] for m in self.MUI_ICON_SVG_PATH_RE.finditer(response.text)]
 
             with open(mui_icons_path, "w") as file:

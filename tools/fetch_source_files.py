@@ -331,10 +331,12 @@ def move_files(repo: str, src_path: str):
                 # Copy Taipy GUI front end code
                 if not os.path.isdir(frontend_dir):
                     os.mkdir(frontend_dir)
+                print("NOTE: Copying taipy-gui front-end source files")
                 fe_src_dir = os.path.join(src_path, "frontend", "taipy-gui")
                 shutil.copytree(os.path.join(fe_src_dir, "src"), os.path.join(frontend_dir, "src"))
                 for f in [f for f in os.listdir(fe_src_dir) if f.endswith(".md") or f.endswith(".json")]:
                     shutil.copy(os.path.join(fe_src_dir, f), os.path.join(frontend_dir, f))
+                print("NOTE: Copying taipy front-end source files")
                 core_fe_src_dir = os.path.join(src_path, "frontend", "taipy")
                 shutil.copytree(os.path.join(core_fe_src_dir, "src"), os.path.join(frontend_dir, "core_src"))
 
