@@ -120,7 +120,7 @@ class VisElementsStep(SetupStep):
             print("NOTE - Generating MUI icons")
             github_token = os.environ.get("GITHUB_TOKEN", "")
             if github_token:
-                github_token = f"https://{github_token}"
+                github_token = f"https://{github_token}@"
             MUI_URL = "raw.githubusercontent.com/mui/material-ui/refs/heads/master/packages/mui-icons-material/lib/{icon}.js"
 
             def extract_svg_paths(icon: str) -> list[str]:
