@@ -433,23 +433,26 @@ in order to properly connect to the Microsoft Entra ID service:
 
 ??? note "Entra ID application management"
 
-    Using the Entra ID authentication protocol assumes that an Entra ID application is already set up
-    with the required permissions. Taipy don't manage the Entra ID application.
+    Using the Entra ID authentication protocol assumes that an Entra ID application is already
+    set up with the required permissions. Taipy doesn't manage the Entra ID application.
 
     First, you need to
     [create an application in the Microsoft Azure portal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal)
     within your organization.
+
     Make sure that the Redirect URI of the application is set to `http://localhost`
     or the URI of your Taipy application.
 
-    The application needs to be [assigned permissions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#assign-a-role-to-the-application).
+    The application needs to be
+    [assigned permissions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#assign-a-role-to-the-application).
     The required permissions are:
 
     - `User.Read` for accessing the logged in user email from the Microsoft Graph API.
     - `GroupMember.Read.All` for accessing the groups the user is a member of. The groups
         are used to assign roles to the user.
 
-    From the Entra ID application, [create a new secret in the Azure portal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#assign-a-role-to-the-application).
+    From the Entra ID application,
+    [create a new secret in the Azure portal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#assign-a-role-to-the-application).
 
     The secret is only shown once, so make sure to store it in a safe place.
     You then need to set the `ENTRA_CLIENT_SECRET` environment variable to the secret value.
