@@ -42,18 +42,18 @@ available users to access the application.
 
 ![Users](images/login_page.png){width=90% : .tp-image-border }
 
-After logging in, you can navigate to your user page to view the transactions assigned to you for 
-investigation. You can see both your past transactions and those requiring your attention. Clicking 
-on a transaction in the table will select it and navigate you to the Analysis page. 
+After logging in, you can navigate to your user page to view the transactions assigned to you 
+for investigation. You can see both your past transactions and those requiring your attention. 
+Clicking on a transaction in the table will select it and navigate you to the Analysis page. 
 
 This page also includes a newsfeed showing the application or other users' activities.
 
 ![User Page](images/user_page.png){width=90% : .tp-image-border }
 
 The Analysis page presents several pieces of information. The left section explains the model's 
-results (providing explanations on the model output), the middle section displays details about the 
-transaction, and the right section shows information about the client. Here, you can verify the 
-client's identity using a deep learning model.
+results (providing explanations on the model output), the middle section displays details about 
+the transaction, and the right section shows information about the client. Here, you can verify 
+the client's identity using a deep learning model.
 
 You can decide whether the transaction is fraudulent or not. If you are unsure, you can share the 
 transaction with someone else for further review.
