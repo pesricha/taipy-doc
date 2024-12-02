@@ -28,13 +28,13 @@ This application displays a list of credit card transactions. A model estimates 
 is fraudulent; this task can be automatically handled by a pipeline. However, some transactions may 
 require further human review.
 
-Within the application, you can access various analyses and visualizations of the data:
+![Transactions](images/Transactions.png){width=90% : .tp-image-border }
+
+Within tis page, you can access various analyses and visualizations of the data:
 
 - List of transactions
 - Client information
 - Fraud details
-
-![Transactions](images/Transactions.png){width=90% : .tp-image-border }
 
 This demo includes user management and collaboration features. You need to select one of the 
 available users to access the application.
