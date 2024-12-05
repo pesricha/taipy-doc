@@ -4,11 +4,11 @@ In certain scenarios, you might want to enrich your user interface by displaying
 For example, when using a caption control to represent a company name along with its logo,
 adding an image can enhance visual context and usability.
 
-Traditionally, in HTML, you would use an img tag with the src attribute pointing to the image’s file path.
+Traditionally, in HTML, you would use an `img` tag with the src attribute pointing to the image’s file path.
 However, directly referencing resources in this way can expose your application to potential security vulnerabilities,
 such as unauthorized access or malicious resource requests.
 
-To mitigate these risks, Taipy introduces the ElementLibrary.get_resource() method.
+To mitigate these risks, Taipy introduces the `ElementLibrary.get_resource()^` method.
 This method acts as a secure gateway for resource handling,
 allowing the application to validate and filter resource requests based on predefined settings.
 It ensures that only authorized and properly configured files are served, protecting your application while maintaining
@@ -16,7 +16,7 @@ functionality.
 
 ## Declaring element {data-source="gui:doc/extension/example_library/example_library.py#L62"}
 
-```py title="example_library.py"
+```python title="example_library.py"
 import base64
 
 from taipy.gui.extension import Element, ElementLibrary, ElementProperty, PropertyType

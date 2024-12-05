@@ -5,16 +5,17 @@ that any changes to the list automatically refresh the display.
 
 # Using list of values
 
-In this section, we will expand the dynamic element library by adding a new dynamic custom element.
+In this section, we'll design a visual component that represents a list of programming languages. Each language will be
+displayed with its name and an icon.
 
-This dynamic element will accept a property containing a list of values and display it within a list. When a Python
-variable is bound to this property, updates to the variable will immediately reflect in the list content shown on the
-page, ensuring real-time synchronization.
+This dynamic component will take a property containing a list of values and render them as a list.
+When a Python variable is bound to this property,
+any updates to the variable will instantly reflect in the displayed list, enabling real-time synchronization.
 
 ## Declaring a dynamic element {data-source="gui:doc/extension/example_library/example_library.py#L45"}
 
 Starting from the code mentioned above, here is how you would declare this new element:
-```py   title="example_library.py"
+```python title="example_library.py"
 from taipy.gui.extension import Element, ElementLibrary, ElementProperty, PropertyType
 
 class ExampleLibrary(ElementLibrary):
@@ -39,7 +40,7 @@ The detailed explanation of the code is as follows:
 - The *lov* property has the type `PropertyType.lov^`, meaning it holds a list of values and is dynamic.
 - The *sort* property has the type `PropertyType.string^`, meaning it holds a string value. Because this property is
   static, it is not updated automatically should the bound variable be changed.
-- get_name() and get_elements() remain the same as in the previous stages of building the extension library example.
+- *get_name()* and *get_elements()* remain the same as in the previous stages of building the extension library example.
 
 ## Creating the React component {data-source="gui:doc/extension/example_library/front-end/src/VisualLabelList.tsx"}
 
@@ -109,7 +110,7 @@ The detailed explanation of the code is as follows:
 
 ## Exporting the React component {data-source="gui:doc/extension/example_library/front-end/src/index.ts"}
 
-When the component is entirely defined, it must be exported by the JavaScript library.
+When the component is entirely defined, it must be exported by the library's JavaScript bundle.
 This is done by adding the export directive in the file *<project dir>/<package dir>front-end/src/index.ts*.
 
 ```js title="index.ts"
