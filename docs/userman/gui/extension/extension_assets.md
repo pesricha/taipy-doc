@@ -1,21 +1,41 @@
 # Accessing the library assets
 
-Say we want to display a small image next to the text. That would be useful in the
-situation where we apply our *caption* control to represent a company name along with
-its logo.
+In certain scenarios, you might want to enrich your user interface by displaying a small image alongside text.
+For example, when using a caption control to represent a company name along with its logo,
+adding an image can enhance visual context and usability.
 
-In HTML, you would create an `img` tag, where the source URL is set to the path of the
-image. However, in order to protect the application from attacks, Taipy provides the
-method `ElementLibrary.get_resource()` that let the application filter what resources
-are requested, and return the actual files according to the application setting.
+Traditionally, in HTML, you would use an img tag with the src attribute pointing to the image’s file path.
+However, directly referencing resources in this way can expose your application to potential security vulnerabilities,
+such as unauthorized access or malicious resource requests.
+
+To mitigate these risks, Taipy introduces the ElementLibrary.get_resource() method.
+This method acts as a secure gateway for resource handling,
+allowing the application to validate and filter resource requests based on predefined settings.
+It ensures that only authorized and properly configured files are served, protecting your application while maintaining
+functionality.
+
+## Declaring element {data-source="gui:doc/extension/example_library/example_library.py#L62"}
+
+```py title="example_library.py"
+import base64
+
+from taipy.gui.extension import Element, ElementLibrary, ElementProperty, PropertyType
 
 
+class ExampleLibrary(ElementLibrary):
+    def __init__(self) -> None:
+        # Initialize the set of visual elements for this extension library
+        logo_path = self.get_resource("assets/logo.png")
+        with open(logo_path, "rb") as f:
+            logo_base64 = base64.b64encode(f.read()).decode("utf-8")
 
-!!! warning "Work in Progress"
-    This section still requires significant work, which is in progress.
-    At this time, Taipy GUI provides a custom element library example
-    with lengthy explanations on how to build it.<br/>
-    Please look into the `doc/extension` directory where Taipy GUI is
-    installed for more information.<br/>
-    You can also look at this example directly on
-    [GitHub](https://github.com/Avaiga/taipy/tree/[BRANCH]/doc/gui/extension).
+        self.elements = {
+            "logo_with_text": Element(
+                "text",
+                {
+                    "text": ElementProperty(PropertyType.string),
+                    "logo_path": ElementProperty(PropertyType.string, default_value=logo_base64),
+                },
+            )
+        }
+```

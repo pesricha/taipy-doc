@@ -33,7 +33,20 @@ This is the list of changes to Taipy releases as they were published.
 
 ## New Features
 
+<h4><strong><code>taipy-core</code></strong> 4.1.0</h4>
+
+- The `ScenarioConfig^` class now exposes a new method `ScenarioConfig.draw()^` to
+  export the scenario configuration graph as a PNG file.<br/>
+  See [issue #1592](https://github.com/Avaiga/taipy/issues/1592).
+
 ## Improvements and changes
+
+<h4><strong><code>taipy-gui</code></strong> 4.1.0</h4>
+
+- The *unselected_value* property of the [`toggle`](../refmans/gui/viselements/generic/toggle.md)
+  control has been removed.<br/>
+  A toggle control that has no selected item new has its
+  [*value*](../refmans/gui/viselements/generic/toggle.md#p-value) property set to None.
 
 <h4><strong><code>taipy-core</code></strong> 4.1.0</h4>
 
@@ -41,6 +54,28 @@ This is the list of changes to Taipy releases as they were published.
   See [issue #1858](https://github.com/Avaiga/taipy/issues/1858).
 
 ## Significant bug fixes
+
+<h4><strong><code>taipy-core</code></strong> 4.1.0</h4>
+
+- The `DataNode^` class now correctly handles the `editor_id` parameter when writing data.<br/>
+  See [issue #2017](https://github.com/Avaiga/taipy/issues/2017).
+
+
+# Enterprise edition: 4.1 ( IN PROGRESS )
+
+(Work in progress - the following link is invalid for the time being)
+
+This release contains all of [`taipy` 4.1](https://pypi.org/project/taipy/4.1.0) as well as
+additional features.
+
+## Known issues
+
+## New Features
+
+## Improvements and changes
+
+## Significant bug fixes
+
 
 # Community edition: 4.0
 
@@ -55,7 +90,7 @@ Published on 2024-10.
 
 !!! warning "Upgrading to Taipy 4.0 from 3.x"
 
-    Due to changes in Taipy’s package structure in version 4.0, the previous version of the
+    Due to changes in Taipy's package structure in version 4.0, the previous version of the
     `taipy-config` package may not be automatically removed during the upgrade process. This could
     lead to runtime issues as the system may attempt to reference outdated dependencies.
 
@@ -73,9 +108,18 @@ following new functionalities:
     - Multiple selection is now available.<br/>
       See the [*multiple*](../refmans/gui/viselements/corelements/scenario_selector.md#p-multiple)
       property for more details.
-    - A filter capability has been added to the scenario selector: TODO add details
-    - A sort capability has been added to the scenario selector: TODO add details
-    - A search capability has been added to the scenario selector: TODO add details
+    - Users can now filter scenarios in the list.<br/>
+      See the
+      [section on Filtering](../refmans/gui/viselements/corelements/scenario_selector.md#filtering)
+      for more details.
+    - Users can now sort scenarios in the list.<br/>
+      See the
+      [section on Sorting](../refmans/gui/viselements/corelements/scenario_selector.md#sorting) for
+      more details.
+    - Users can now search scenarios in the list<br/>
+      See the
+      [section on Searching](../refmans/gui/viselements/corelements/scenario_selector.md#searching)
+      for more details.
 - [*Data Node Selector*](../refmans/gui/viselements/corelements/data_node_selector.md):
     - Multiple selection is now available.<br/>
       See the [*multiple*](../refmans/gui/viselements/corelements/data_node_selector.md#p-multiple)
@@ -292,7 +336,7 @@ following new functionalities:
 - Scenario selection becomes impossible in the `scenario_selector` control after creating a new
   Scenario.<br/>
   See [issue #2169](https://github.com/Avaiga/taipy/issues/2169).
-- The Delete button of the "Edit scenario" dialog of the `scenario_selector` control is disabled 
+- The Delete button of the "Edit scenario" dialog of the `scenario_selector` control is disabled
   when it should not be.<br/>
   See [issue #1995](https://github.com/Avaiga/taipy/issues/1995).
 - A warning is issued when a scenario is created from the `scenario_selector` control.<br/>
