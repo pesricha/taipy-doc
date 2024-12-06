@@ -25,9 +25,8 @@ this approach.
 In this section, we will expand the dynamic element library, initially created in the
 [Scalar properties](dynamic_element/scalar_props.md) section, by adding a chessboard element.
 
-This element will accept a property containing the state of a chess game
-and display it as a visually interactive chessboard. When a Python variable is bound to this property,
-updates to the variable will immediately update the chessboard displayed on the page, ensuring real-time synchronization.
+This visual element will take a property representing the state of a chess game,
+structured as tabular data, and render it as an interactive chessboard.
 
 ## Declaring a dynamic element {data-source="gui:doc/extension/example_library/example_library.py#L43"}
 Starting from the code mentioned above, here is how you would declare this new element:

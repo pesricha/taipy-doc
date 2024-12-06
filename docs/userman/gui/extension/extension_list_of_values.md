@@ -8,9 +8,7 @@ that any changes to the list automatically refresh the display.
 In this section, we'll design a visual component that represents a list of programming languages. Each language will be
 displayed with its name and an icon.
 
-This component will take a property containing a list of values and render them as a list.
-When a Python variable is bound to this property, any updates to the variable will instantly reflect in the displayed list,
-enabling real-time synchronization.
+This visual element will take a property containing a list of values and render them as a list.
 
 ## Declaring the element {data-source="gui:doc/extension/example_library/example_library.py#L52"}
 
