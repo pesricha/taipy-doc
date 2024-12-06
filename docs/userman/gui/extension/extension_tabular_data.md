@@ -1,4 +1,4 @@
-The previous section on [Scalar properties](scalar_props.md) shows how to create a dynamic element
+The previous section on [Scalar properties](dynamic_element/scalar_props.md) shows how to create a dynamic element
 that holds a scalar value. However, when dealing with collections of data, such as tabular data, we
 need a more complex approach to support arrays or tables that can be dynamically updated.
 
@@ -23,15 +23,15 @@ this approach.
 # Using tabular data
 
 In this section, we will expand the dynamic element library, initially created in the
-[Scalar properties](scalar_props.md) section, by adding a new dynamic custom element.
+[Scalar properties](dynamic_element/scalar_props.md) section, by adding a chessboard element.
 
-This dynamic element will accept a property containing tabular data and display it within a table.
-When a Python variable is bound to this property, updates to the variable will immediately reflect
-in the table content shown on the page, ensuring real-time synchronization.
+This element will accept a property containing the state of a chess game
+and display it as a visually interactive chessboard. When a Python variable is bound to this property,
+updates to the variable will immediately update the chessboard displayed on the page, ensuring real-time synchronization.
 
-## Declaring a dynamic element {data-source="gui/extension/example_library/example_library.py#L36"}
+## Declaring a dynamic element {data-source="gui:doc/extension/example_library/example_library.py#L43"}
 Starting from the code mentioned above, here is how you would declare this new element:
-```py   title="example_library.py"
+```python title="example_library.py"
 from taipy.gui.extension import Element, ElementLibrary, ElementProperty, PropertyType
 
 class ExampleLibrary(ElementLibrary):
@@ -49,8 +49,8 @@ class ExampleLibrary(ElementLibrary):
             ),
         }
 ```
-The declaration of this dynamic element is very similar to what we created in the
-[Scalar properties](scalar_props.md).
+The declaration of this element is very similar to what we created in the
+[Scalar properties](dynamic_element/scalar_props.md).
 
 The detailed explanation of the code is as follows:
 
@@ -63,11 +63,11 @@ The detailed explanation of the code is as follows:
   that are part of this library. Each element is defined with its properties and associated React
   component.
 
-## Creating the React component {data-source="gui/extension/example_library/front-end/src/GameTable.tsx"}
+## Creating the React component {data-source="gui:doc/extension/example_library/front-end/src/GameTable.tsx"}
 
 The React component for the *game_table* element is defined as follows:
 
-```tsx title="GameTable.tsx" linenums="1"
+```tsx title="GameTable.tsx"
 import React, { useEffect, useMemo, useState } from "react";
 import {
     createRequestDataUpdateAction,
@@ -152,24 +152,24 @@ export default GameTable;
 
 The detailed explanation of the code is as follows:
 
-- We use the [`useDispatch()`](../../../../refmans/reference_guiext/functions/useDispatch.md) hook
+- We use the [`useDispatch()`](../../refmans/reference_guiext/functions/useDispatch.md) hook
   to dispatch actions to the store and initiate backend communications.
-- Additionally, the [`useModule()`](../../../../refmans/reference_guiext/functions/useModule.md)
+- Additionally, the [`useModule()`](../../refmans/reference_guiext/functions/useModule.md)
   hook retrieves the page module, enabling correct execution of backend functions.
 - To request an update for every dynamic property of an element on initial render, we use the
-  [`useDispatchRequestUpdateOnFirstRender()`](../../../../refmans/reference_guiext/functions/useDispatchRequestUpdateOnFirstRender.md)
+  [`useDispatchRequestUpdateOnFirstRender()`](../../refmans/reference_guiext/functions/useDispatchRequestUpdateOnFirstRender.md)
   hook provided by the Taipy GUI Extension API. This hook takes five parameters:
   - *dispatch*: The React dispatcher associated with the context.
   - *id*: The identifier of the element.
   - *context*: The execution context.
   - *updateVars*: The content of the *updateVars* property.
 - We also dispatch the
-  [`createRequestDataUpdateAction()`](../../../../refmans/reference_guiext/functions/createRequestDataUpdateAction.md)
+  [`createRequestDataUpdateAction()`](../../refmans/reference_guiext/functions/createRequestDataUpdateAction.md)
   hook to create a request data update action, which updates the context by invoking the
   `(ElementLibrary.)get_data()^` method of the backend library. This invocation triggers an update
   of front-end elements holding the data.
 
-The [`createRequestDataUpdateAction()`](../../../../refmans/reference_guiext/functions/createRequestUpdateAction.md)
+The [`createRequestDataUpdateAction()`](../../refmans/reference_guiext/functions/createRequestUpdateAction.md)
 hook accepts eight parameters:
 
 - *name*: The name of the variable containing the requested data, as received in the property.
@@ -181,18 +181,18 @@ hook accepts eight parameters:
 - *allData*: A flag indicating if all the data is requested.
 - *library*: The name of the extension library.
 
-## Exporting the React component {data-source="gui/extension/example_library/front-end/src/index.ts"}
+## Exporting the React component {data-source="gui:doc/extension/example_library/front-end/src/index.ts"}
 
 When the component is entirely defined, it must be exported by the JavaScript library.
 This is done by adding the export directive in the file *<project dir>/<package dir>front-end/src/index.ts*.
 
-```js title="index.ts"
+```ts title="index.ts"
 import GameTable from "./GameTable";
 
 export { GameTable };
 ```
 
-## Using the element {data-source="gui/extension/table_chess_game.py"}
+## Using the element {data-source="gui:doc/extension/table_chess_game.py"}
 
 In the example below, we use the *game_table* element to display a chess game board.
 The data is represented as a two-dimensional list of strings, where each string represents a chess
@@ -201,7 +201,7 @@ The board is displayed in a table format using the *game_table* element.<br/>
 We can see how the data property of the control is bound to the Python variable *data*, using the
 default property syntax.
 
-```py
+```python title="table_chess_game.py"
 data = [
     ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"]
     ["♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"],
