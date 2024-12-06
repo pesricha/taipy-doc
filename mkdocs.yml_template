@@ -100,7 +100,8 @@ nav:
         - "Dynamic Elements":
           - userman/gui/extension/dynamic_element/index.md
           - "Scalar properties": userman/gui/extension/dynamic_element/scalar_props.md
-          - "Tabular data properties": userman/gui/extension/dynamic_element/tabular_data_props.md
+        - "List of Values Elements": userman/gui/extension/extension_list_of_values.md
+        - "Tabular Elements": userman/gui/extension/extension_tabular_data.md
 
     - "Scenario features":
       - "Data integration":

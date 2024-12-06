@@ -8,9 +8,11 @@ that any changes to the list automatically refresh the display.
 In this section, we'll design a visual component that represents a list of programming languages. Each language will be
 displayed with its name and an icon.
 
-This visual element will take a property containing a list of values and render them as a list.
+This dynamic component will take a property containing a list of values and render them as a list.
+When a Python variable is bound to this property,
+any updates to the variable will instantly reflect in the displayed list, enabling real-time synchronization.
 
-## Declaring the element {data-source="gui:doc/extension/example_library/example_library.py#L52"}
+## Declaring a dynamic element {data-source="gui:doc/extension/example_library/example_library.py#L45"}
 
 Starting from the code mentioned above, here is how you would declare this new element:
 ```python title="example_library.py"
@@ -43,7 +45,7 @@ The detailed explanation of the code is as follows:
 ## Creating the React component {data-source="gui:doc/extension/example_library/front-end/src/VisualLabelList.tsx"}
 
 The React component for the *visual_label_list* element is defined as follows:
-```tsx title="VisualLabelList.tsx"
+```tsx title="VisualLabelList.tsx" linenums="1"
 import React, { useMemo } from "react";
 import { LoV, useLovListMemo } from "taipy-gui";
 
@@ -99,8 +101,8 @@ export default VisualLabelList;
 The detailed explanation of the code is as follows:
 
 - The *lov* property, defined as `PropertyType.lov^`, expects a value of type
-  [`LoV`](../../../refmans/reference_guiext/type-aliases/LoV.md).
-- Using Taipy GUI’s [`useLovListMemo()`](../../../refmans/reference_guiext/functions/useLovListMemo.md) hook, we
+  [`LoV`](../../../../refmans/reference_guiext/type-aliases/LoV.md).
+- Using Taipy GUI’s [`useLovListMemo()`](../../../../refmans/reference_guiext/functions/useLovListMemo.md) hook, we
   create a memoized list of values based on this *lov* property, efficiently managing the component’s list of values.
 - To enhance this list, we can apply sorting using the *sort* property, which accepts either “asc” for ascending or
   “desc” for descending order. Since *sort* is static, a default value is unnecessary. When set to "asc" or "desc," the
@@ -111,7 +113,7 @@ The detailed explanation of the code is as follows:
 When the component is entirely defined, it must be exported by the library's JavaScript bundle.
 This is done by adding the export directive in the file *<project dir>/<package dir>front-end/src/index.ts*.
 
-```ts title="index.ts"
+```js title="index.ts"
 import VisualLabelList from "./VisualLabelList";
 
 export { VisualLabelList };
@@ -120,7 +122,7 @@ export { VisualLabelList };
 ## Using the element {data-source="gui:doc/extension/visual_label_list.py"}
 
 To use the *visual_label_list* element in a Python script, you can follow the example below:
-```python title="List of items"
+```py title="List of items"
 languages = [
     ["Python", Icon("images/python.png", "Python logo")],
     ["JavaScript", Icon("images/javascript.png", "JavaScript logo")],
@@ -134,12 +136,12 @@ page = """
 """
 ```
 
-In this example, the *languages* list contains a [`list of value`](../binding.md#list-of-values),
+In this example, the *languages* list contains a [`list of value`](../../binding.md#list-of-values),
 each with a name and an icon. The *page* variable contains a string that uses the *visual_label_list* element to display
 the list of languages in ascending order. The *sort* property is set to “asc” to sort the list alphabetically by
 language name. When the page is rendered, the list will display the languages in the specified order.
 
-By following these steps, you can create the element that displays a list of values and updates in real time as
+By following these steps, you can create a dynamic element that displays a list of values and updates in real time as
 the underlying data changes. This approach allows you to build custom elements that can manage and display collections
 of data, providing a more interactive and responsive user interface.
 

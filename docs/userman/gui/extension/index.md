@@ -231,6 +231,6 @@ make your way from one example to the next.
 - [Custom dynamic elements](dynamic_element/index.md)
 - [Using scalar properties](dynamic_element/scalar_props.md)
 - [Using List of Values](extension_list_of_values.md)
-- [Using tabular data](extension_data.md)
+- [Using tabular data](extension_tabular_data.md)
 - [Accessing assets](extension_assets.md)
 - [Packaging an element library](extension_packaging.md)
