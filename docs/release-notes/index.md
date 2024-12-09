@@ -31,6 +31,8 @@ This is the list of changes to Taipy releases as they were published.
 
 ## Known issues
 
+- No Known issues.
+
 ## New Features
 
 <h4><strong><code>taipy-core</code></strong> 4.1.0</h4>
@@ -70,12 +72,19 @@ additional features.
 
 ## Known issues
 
+- No Known issues.
+
 ## New Features
+
+- Not yet documented.
 
 ## Improvements and changes
 
+- Not yet documented.
+
 ## Significant bug fixes
 
+- No bug fix.
 
 # Community edition: 4.0
 
