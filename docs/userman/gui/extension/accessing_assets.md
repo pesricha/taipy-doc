@@ -48,7 +48,7 @@ The detailed explanation of the code is as follows:
 
 - The `(ElementLibrary.)get_resource()^`
 method retrieves the absolute path to the logo image file on your local file system.
-The path is relative to the *<project dir>/<package dir>* directory of your extension library project.
+The path is relative to the `<project_dir>/<package_dir>` directory of your extension library project.
 - The `logo_with_text` element includes two properties: *text* and *logo_path*.
 - The *text* property has the type `PropertyType.string^`, specifying it holds a static string value.
 - The *logo_path* property has the type `PropertyType.string^` as well.
@@ -138,7 +138,7 @@ This can be achieved by developing a custom JavaScript file to handle the animat
 ## Custom JavaScript File {data-source=“gui:doc/extension/example_library/front-end/scripts/logoAnimation.js”}
 
 The following JavaScript file is designed to implement animation effects for the logo image and is intended for inclusion in your extension library.
-To ensure proper integration, place the javascript file in the *<package dir>* directory of your extension library project.
+To ensure proper integration, place the javascript file in the `<package_dir>` directory of your extension library project.
 In this example, we would create a *scripts* directory within the *front-end* directory and place the *logoAnimation.js* file inside it.
 Here is what the path would look like: `<project_dir>/<package_dir>/front-end/scripts/logoAnimation.js`.
 
