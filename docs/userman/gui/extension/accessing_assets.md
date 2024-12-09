@@ -4,7 +4,7 @@ In certain scenarios, you might want to enrich your user interface by displaying
 For example, when using a caption control to represent a company name along with its logo,
 adding an image can enhance visual context and usability.
 
-Traditionally, in HTML, you would use an `img` tag with the `src` attribute pointing to the image’s file path.
+Traditionally, in HTML, you would use an `img` tag with the `src` attribute pointing to the image's file path.
 However, directly referencing resources in this way can expose your application to potential security vulnerabilities,
 such as unauthorized access or malicious resource requests.
 
@@ -17,7 +17,8 @@ functionality.
 ## Declaring element {data-source="gui:doc/extension/example_library/example_library.py#L62"}
 
 In this section, we will create a new element that displays a logo image alongside a text caption. This visual element
-will utilize the `(ElementLibrary.)get_resource()^` method to securely access the image file on the server.
+will utilize the `(ElementLibrary.)get_resource()^` method to securely access the image file on the server. The image file
+would be placed in the `assets` directory of the extension library project.
 
 ```python title="example_library.py"
 import base64
@@ -47,14 +48,16 @@ The detailed explanation of the code is as follows:
 
 - The `(ElementLibrary.)get_resource()^`
 method retrieves the absolute path to the logo image file on your local file system.
-This means the file is not accessible from the front-end.
-To make the file accessible via the web, you should use the `(ElementLibrary.)get_resource_url()^` method instead.
-- The `logo_with_text` element includes two properties: `text` and `logo_path`.
-- The `text` property has the type `PropertyType.string^`, meaning it holds a string value.
-- The `logo_path` property has the type `PropertyType.string^`, meaning it holds a string value.
-  The `default_value` parameter is set to the base64-encoded image file, which is used as the default value for the property.
+The path is relative to the `<project dir>/<package dir>` directory of your extension library project.
+- The `logo_with_text` element includes two properties: *text* and *logo_path*.
+- The *text* property has the type `PropertyType.string^`, specifying it holds a static string value.
+- The *logo_path* property has the type `PropertyType.string^` as well.
+  The *default_value* parameter is set to the base64-encoded image file, which is used as the initial value for the property.
 
 ## Creating the React component {data-source="gui:doc/extension/example_library/front-end/src/LogoWithText.tsx"}
+
+Below is the source code for implementing the component of this element:
+
 ```tsx title="LogoWithText.tsx"
 import React from "react";
 import { useDynamicProperty } from "taipy-gui";
@@ -108,6 +111,9 @@ export { LogoWithText };
 
 ## Using the element {data-source="gui:doc/extension/logo_with_text.py"}
 
+The custom element *logo_with_text* defined in the code snippet displays a logo image accompanied by a text caption.
+The *name* variable is used to dynamically set the text within the element.
+
 ```python title="logo_with_text.py"
 name = "Taipy"
 
@@ -123,27 +129,18 @@ When you run this application, the page displays the element like this:
     <figcaption>Logo with text</figcaption>
 </figure>
 
-# Additional resources {data-source="gui:doc/extension/example_library/example_library.py#L92"}
+# Additional resources
 
-Beside the `ElementLibrary.get_resource()^` method, Taipy provides other methods to manage resources securely.
-One of them is the `ElementLibrary.get_scripts()^` method, which allows you to include JavaScript files in your application.
-This method ensures that only authorized scripts are loaded, protecting your application from potential security threats.
+In certain cases, incorporating additional resources, such as JavaScript files, may be required to enhance the functionality of your extension library.
+For instance, you could create animation effects for the logo image discussed in the previous section.
+This can be achieved by developing a custom JavaScript file to handle the animations and integrating it into your extension library.
 
-The code snippet below illustrates how to use the `(ElementLibrary.)get_scripts()^` method to include a JavaScript file that adds animation to your application’s logo.
-This snippet should be placed within your extension library class, where you override the `(ElementLibrary.)get_scripts()^` method to return a list of script paths.
+## Custom JavaScript File {data-source=“gui:doc/extension/example_library/front-end/scripts/logoAnimation.js”}
 
-```python title="example_library.py"
-    def get_scripts(self) -> list[str]:
-        return [
-            "front-end/dist/exampleLibrary.js",
-            "front-end/scripts/logoAnimation.js",
-        ]
-```
-
-## Custom Javascript file {data-source="gui:doc/extension/example_library/front-end/scripts/logoAnimation.js"}
-
-By adding this custom script to your extension library, it will be included in the application bundle.
-When the application is run, the script will be executed, adding animation to the logo image.
+The following JavaScript file is designed to implement animation effects for the logo image and is intended for inclusion in your extension library.
+To ensure proper integration, place the `logoAnimation.js` file in the `<package dir>` directory of your extension library project.
+In this example, we would create a `scripts` directory within the `front-end` directory and place the `logoAnimation.js` file inside it.
+Here is what the path would look like: `<project dir>/<package dir>/front-end/scripts/logoAnimation.js`.
 
 ```js title="logoAnimation.js"
 const style = document.createElement('style');
@@ -172,6 +169,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 100);
 });
+```
+
+## Including the script in the library {data-source="gui:doc/extension/example_library/example_library.py#L92"}
+
+To include the additional script in your extension library, Taipy provides other methods to manage resources securely.
+One of them is the `ElementLibrary.get_scripts()^` method, which allows you to include JavaScript files in your application.
+This method ensures that only authorized scripts are loaded, protecting your application from potential security threats.
+
+The code snippet below illustrates how to use the `(ElementLibrary.)get_scripts()^` method to include a JavaScript file that adds animation to your application’s logo.
+This snippet should be placed within your extension library class, where you override the `(ElementLibrary.)get_scripts()^` method to return a list of script paths.
+The paths should be relative to the `<project dir>/<package dir>` directory of your extension library project.
+
+```python title="example_library.py"
+def get_scripts(self) -> list[str]:
+    return [
+        "front-end/dist/exampleLibrary.js",
+        "front-end/scripts/logoAnimation.js",
+    ]
 ```
 
 <figure>
