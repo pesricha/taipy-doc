@@ -48,7 +48,7 @@ The detailed explanation of the code is as follows:
 
 - The `(ElementLibrary.)get_resource()^`
 method retrieves the absolute path to the logo image file on your local file system.
-The path is relative to the `<project dir>/<package dir>` directory of your extension library project.
+The path is relative to the *<project dir>/<package dir>* directory of your extension library project.
 - The `logo_with_text` element includes two properties: *text* and *logo_path*.
 - The *text* property has the type `PropertyType.string^`, specifying it holds a static string value.
 - The *logo_path* property has the type `PropertyType.string^` as well.
@@ -101,7 +101,7 @@ export default LogoWithText;
 ## Exporting the React component {data-source="gui:doc/extension/example_library/front-end/src/index.ts"}
 
 When the component is entirely defined, it must be exported by the library's JavaScript bundle.
-This is done by adding the export directive in the file *<project dir>/<package dir>front-end/src/index.ts*.
+This is done by adding the `export` directive in the file `<project_dir>/<package_dir>/front-end/src/index.ts`.
 
 ```ts title="index.ts"
 import LogoWithText from "./LogoWithText";
@@ -138,9 +138,9 @@ This can be achieved by developing a custom JavaScript file to handle the animat
 ## Custom JavaScript File {data-source=“gui:doc/extension/example_library/front-end/scripts/logoAnimation.js”}
 
 The following JavaScript file is designed to implement animation effects for the logo image and is intended for inclusion in your extension library.
-To ensure proper integration, place the `logoAnimation.js` file in the `<package dir>` directory of your extension library project.
-In this example, we would create a `scripts` directory within the `front-end` directory and place the `logoAnimation.js` file inside it.
-Here is what the path would look like: `<project dir>/<package dir>/front-end/scripts/logoAnimation.js`.
+To ensure proper integration, place the javascript file in the *<package dir>* directory of your extension library project.
+In this example, we would create a *scripts* directory within the *front-end* directory and place the *logoAnimation.js* file inside it.
+Here is what the path would look like: `<project_dir>/<package_dir>/front-end/scripts/logoAnimation.js`.
 
 ```js title="logoAnimation.js"
 const style = document.createElement('style');
@@ -179,7 +179,7 @@ This method ensures that only authorized scripts are loaded, protecting your app
 
 The code snippet below illustrates how to use the `(ElementLibrary.)get_scripts()^` method to include a JavaScript file that adds animation to your application’s logo.
 This snippet should be placed within your extension library class, where you override the `(ElementLibrary.)get_scripts()^` method to return a list of script paths.
-The paths should be relative to the `<project dir>/<package dir>` directory of your extension library project.
+The paths should be relative to the `<project_dir>/<package_dir>` directory of your extension library project.
 
 ```python title="example_library.py"
 def get_scripts(self) -> list[str]:
