@@ -227,7 +227,7 @@ following new functionalities:
 - The impact of the
   [*show_properties*](../refmans/gui/viselements/corelements/data_node.md#p-show_properties)
   property of the [`data_node`](../refmans/gui/viselements/corelements/data_node.md) control was
-  changed. This property now controls whether or not the "Properties" tab is visible.<br/>
+  changed. This property now controls whether the "Properties" tab is visible.<br/>
   To show or hide the list of custom properties in the "Properties" tab, you must now use the
   [*show_custom_properties*](../refmans/gui/viselements/corelements/data_node.md#p-show_custom_properties)
   property.
@@ -339,6 +339,12 @@ following new functionalities:
   See [issue #1472](https://github.com/Avaiga/taipy/issues/1472).
 
 ## Significant bug fixes
+
+<h4><strong><code>taipy-core</code></strong> 4.0.2</h4>
+- Running a Taipy application on a unix base Docker container with file data nodes (csv, excel,
+  json, etc.) created on a windows host machine will raise an error because the path is not
+  recognized by the python interpreter.
+  See [issue #2267](https://github.com/Avaiga/taipy/issues/2267).
 
 <h4><strong><code>taipy</code></strong> 4.0.1</h4>
 
