@@ -1,0 +1,127 @@
+---
+hide:
+  - toc
+---
+
+Let's explore applications made with Taipy.
+
+<!-- Quick accesses -->
+<div class="tp-row tp-row--gutter-sm">
+  <div class="tp-col-12 tp-col-md-4 d-flex">
+    <a class="tp-content-card tp-content-card--delta" href="finance">
+      <header class="tp-content-card-header">
+        <img class="tp-content-card-icon--small" src="images/monitoring.svg">
+        <h3>Finance</h3>
+      </header>
+      <div class="tp-content-card-body">
+        <p>
+          Explore financial applications using Taipy.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="tp-col-12 tp-col-md-4 d-flex">
+    <a class="tp-content-card tp-content-card--accent" href="decision_support">
+      <header class="tp-content-card-header">
+        <img class="tp-content-card-icon--small" src="images/rocket_launch.svg">
+        <h3>Decision Support</h3>
+      </header>
+      <div class="tp-content-card-body">
+        <p>
+          Discover decision support applications for what-if analysis.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="tp-col-12 tp-col-md-4 d-flex">
+    <a class="tp-content-card tp-content-card--beta" href="llm">
+      <header class="tp-content-card-header">
+        <img class="tp-content-card-icon--small" src="images/model.svg">
+        <h3>LLM</h3>
+      </header>
+      <div class="tp-content-card-body">
+        <p>
+          Uncover a list of applications using LLM.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="tp-col-12 tp-col-md-4 d-flex">
+    <a class="tp-content-card tp-content-card--alpha" href="visualization">
+      <header class="tp-content-card-header">
+        <img class="tp-content-card-icon--small" src="images/visualize.svg">
+        <h3>Visualization</h3>
+      </header>
+      <div class="tp-content-card-body">
+        <p>
+          Delve into applications that focus on visualization.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="tp-col-12 tp-col-md-4 d-flex">
+    <a class="tp-content-card tp-content-card--primary" href="other">
+      <header class="tp-content-card-header">
+        <img class="tp-content-card-icon--small" src="images/package.svg">
+        <h3>Other</h3>
+      </header>
+      <div class="tp-content-card-body">
+        <p>
+          See other applications using Taipy.
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- Filters -->
+<ul class="tp-pills-list tp-pills-filter">
+  <li>
+    <input type="checkbox" name="filter-all" id="filter-all" value="all" checked>
+    <label class="tp-pill" for="filter-all">
+      <span>All</span>
+    </label>
+  </li>
+  <li>
+    <input type="checkbox" name="filter-dashboard" id="filter-dashboard" value="dashboard">
+    <label class="tp-pill" for="filter-dashboard">
+      <span>Dashboard</span>
+    </label>
+  </li>
+  <li>
+    <input type="checkbox" name="filter-scenario" id="filter-scenario" value="scenario">
+    <label class="tp-pill" for="filter-scenario">
+      <span>Scenario</span>
+    </label>
+  </li>
+  <li>
+    <input type="checkbox" name="filter-ai" id="filter-ai" value="ai">
+    <label class="tp-pill" for="filter-ai">
+      <span>Machine Learning</span>
+    </label>
+  </li>
+  <li>
+    <input type="checkbox" name="filter-optimization" id="filter-optimization" value="optimization">
+    <label class="tp-pill" for="filter-optimization">
+      <span>Optimization</span>
+    </label>
+  </li>
+  <li>
+    <input type="checkbox" name="filter-community" id="filter-community" value="community">
+    <label class="tp-pill" for="filter-community">
+      <span>Community edition</span>
+    </label>
+  </li>
+  <li>
+    <input type="checkbox" name="filter-enterprise" id="filter-enterprise" value="enterprise">
+    <label class="tp-pill" for="filter-enterprise">
+      <span>Enterprise edition</span>
+    </label>
+  </li>
+</ul>
+
+[LIST_OF_ITEMS]
