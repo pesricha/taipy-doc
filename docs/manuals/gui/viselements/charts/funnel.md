@@ -1,3 +1,0 @@
-## Funnel charts
-
-TODO

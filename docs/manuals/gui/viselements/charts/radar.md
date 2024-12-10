@@ -1,3 +1,0 @@
-## Radar charts
-
-TODO

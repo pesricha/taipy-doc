@@ -1,3 +1,0 @@
-## Filled areas
-
-TODO

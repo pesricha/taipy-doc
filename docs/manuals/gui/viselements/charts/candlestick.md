@@ -1,3 +1,0 @@
-## Candlestick charts
-
-TODO
