@@ -149,6 +149,12 @@ taipy run main.py
 
 ![Dynamic Chart Application](images/dynamic_chart.gif){width=70% : .tp-image-border }
 
+# Start with templates
+You can use the Taipy CLI to quickly create a multi-page application with ready-to-use templates. Simply run:
+```console
+taipy create
+```
+This command generates a new application in the current directory, allowing you to get started immediately.
 ---
 
 For more realistic and advanced use cases, check out our
