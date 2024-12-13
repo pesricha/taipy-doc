@@ -103,6 +103,7 @@ nav:
         - "List of Values Elements": userman/gui/extension/list_of_values.md
         - "Tabular Elements": userman/gui/extension/tabular_data.md
         - "Accessing assets": userman/gui/extension/accessing_assets.md
+        - "Packaging extensions": userman/gui/extension/extension_packaging.md
 
     - "Scenario features":
       - "Data integration":
