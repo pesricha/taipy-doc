@@ -3,7 +3,7 @@
 You can create an autonomous Python package to distribute your Taipy GUI custom extension library.
 
 The following steps must be performed:
-- go to your project's root `Pipfile` directory
+- go to your project's root directory (where the `Pipfile` is located)
 - Install the build package:
   - If you are using `pipenv`:
   ```bash
