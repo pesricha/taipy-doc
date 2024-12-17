@@ -1,136 +1,333 @@
 site_name: Taipy
 site_url: https://docs.taipy.io/en/develop
+site_description: Documentation for Taipy
+site_author: taipy.io
 repo_url: https://github.com/avaiga/taipy
 repo_name: taipy
 #strict: true
-copyright: © [YEAR] Avaiga
+copyright: © 2021-[YEAR] Avaiga
 nav:
-  - Home:
-    - index.md
-    - Installation: installation.md
-  - 'Getting started':
-    - getting_started/index.md
-  [GETTING_STARTED_CONTENT]
-  - 'User Manual':
-    - "About Taipy's User Manual": 'manuals/about.md'
-    - Taipy GUI:
-        - manuals/gui/index.md
-        - 'Pages': 'manuals/gui/pages.md'
-        - 'Visual Elements':
-           - 'Visual Elements': 'manuals/gui/viselements/index.md'
-           - 'Controls': 'manuals/gui/controls.md'
-           - 'Blocks': 'manuals/gui/blocks.md'
-        - 'Binding variables': 'manuals/gui/binding.md'
-        - 'Callbacks': 'manuals/gui/callbacks.md'
-        - 'Notifications': 'manuals/gui/notifications.md'
-        - 'Styling': 'manuals/gui/styling.md'
-        - 'Configuration': 'manuals/gui/configuration.md'
-        - 'Using Notebooks': 'manuals/gui/notebooks.md'
-        - 'Extension': 'manuals/gui/extension.md'
-    - Taipy Core:
-        - manuals/core/index.md
-        - 'Concepts':
-            - manuals/core/concepts/index.md
-            - 'Data node': 'manuals/core/concepts/data-node.md'
-            - 'Task': 'manuals/core/concepts/task.md'
-            - 'Pipeline': 'manuals/core/concepts/pipeline.md'
-            - 'Scenario': 'manuals/core/concepts/scenario.md'
-            - 'Cycle': 'manuals/core/concepts/cycle.md'
-            - 'Job': 'manuals/core/concepts/job.md'
-            - 'Execution flow': 'manuals/core/concepts/execution-flow.md'
-            - 'Scope': 'manuals/core/concepts/scope.md'
-        - 'Configuration':
-            - manuals/core/config/index.md
-            - 'Config': 'manuals/core/config/config.md'
-            - 'Data node configs': 'manuals/core/config/data-node-config.md'
-            - 'Task configs': 'manuals/core/config/task-config.md'
-            - 'Pipeline configs': 'manuals/core/config/pipeline-config.md'
-            - 'Scenario configs': 'manuals/core/config/scenario-config.md'
-            - 'Global config': 'manuals/core/config/global-config.md'
-            - 'Job execution config': 'manuals/core/config/job-config.md'
-            - 'Config checker': 'manuals/core/config/config-checker.md'
-            - 'Advanced configuration': 'manuals/core/config/advanced-config.md'
-        - 'Entities':
-            - manuals/core/entities/index.md
-            - "Entities' creation": 'manuals/core/entities/scenario-creation.md'
-            - 'Scenario and cycle management': 'manuals/core/entities/scenario-cycle-mgt.md'
-            - 'Pipeline management': 'manuals/core/entities/pipeline-mgt.md'
-            - 'Task management': 'manuals/core/entities/task-mgt.md'
-            - 'Data node management': 'manuals/core/entities/data-node-mgt.md'
-            - 'Job execution': 'manuals/core/entities/scheduling-and-job-execution.md'
-    - 'Taipy REST':
-        - manuals/rest/index.md
-    - 'Running Taipy services':
-        - manuals/running_services/index.md
-    - 'Authentication and Roles':
-        - manuals/auth/index.md
-        - 'Authentication': 'manuals/auth/authentication.md'
-        - 'Authorization': 'manuals/auth/authorization.md'
-    - Deployment:
-        - 'Prepare your application for deployment': 'manuals/deployment/prepare-taipy-for-deployment.md'
-        - GNU/Linux:
-            - 'Ubuntu': 'manuals/deployment/linux/ubuntu.md'
-            - 'RHEL': 'manuals/deployment/linux/redhat.md'
-        - 'Windows Server': 'manuals/deployment/windows.md'
-        - Docker:
-            - 'Development': 'manuals/deployment/docker/development.md'
-            - 'Production': 'manuals/deployment/docker/production.md'
-        - 'Heroku':
-            - 'Getting started': 'manuals/deployment/heroku/getting-started.md'
-            - 'Setup': 'manuals/deployment/heroku/setup.md'
-            - 'Based on Git': 'manuals/deployment/heroku/git.md'
-            - 'Based on Docker': 'manuals/deployment/heroku/docker.md'
-  - 'Reference Manual':
-    - "About Taipy's Reference Manual": 'manuals/reference.md'
-    [REFERENCE_CONTENT]
+  - "Release Notes":
+    - "Release Notes": release-notes/index.md
+    - "Legacy": release-notes/legacy.md
+    - "Migration": release-notes/migration.md
+  - "Contributing":
+    - "Contributing": contributing/index.md
+    - "Code of Conduct": contributing/code_of_conduct.md
+    - "Contributors": contributing/contributors.md
+
+  - "Tutorials":
+    - "Tutorials": tutorials/index.md
+    - "Fundamentals":
+      - "Fundamentals": tutorials/fundamentals/index.md
+      - "Getting Started": tutorials/getting_started/index.md
+      - "Understanding GUI":
+        - "Understanding GUI": tutorials/articles/understanding_gui/index.md
+        - "1 - First Web page": tutorials/articles/understanding_gui/step_01/step_01.md
+        - "2 - Visual elements": tutorials/articles/understanding_gui/step_02/step_02.md
+        - "3 - Interactions": tutorials/articles/understanding_gui/step_03/step_03.md
+        - "4 - Charts": tutorials/articles/understanding_gui/step_04/step_04.md
+        - "5 - Python expressions in properties": tutorials/articles/understanding_gui/step_05/step_05.md
+        - "6 - Page layouts": tutorials/articles/understanding_gui/step_06/step_06.md
+        - "7 - Multi-pages, navbars, and menus": tutorials/articles/understanding_gui/step_07/step_07.md
+      - "Scenario management overview": tutorials/articles/scenario_management_overview/index.md
+      - "First Realistic application":
+        - "First Realistic application": tutorials/articles/complete_application/index.md
+        - "1 - Data visualization page": tutorials/articles/complete_application/step_01/step_01.md
+        - "2 - Algorithms used": tutorials/articles/complete_application/step_02/step_02.md
+        - "3 - Scenario configuration": tutorials/articles/complete_application/step_03/step_03.md
+        - "4 - Scenario page": tutorials/articles/complete_application/step_04/step_04.md
+        - "5 - Performance page": tutorials/articles/complete_application/step_05/step_05.md
+      - "Creating applications" :
+        - "Creating an LLM ChatBot":
+          - "Creating an LLM ChatBot": tutorials/articles/chatbot/index.md
+        - "Creating an RAG ChatBot":
+          - "Creating an RAG ChatBot": tutorials/articles/rag_chatbot/index.md
+    - "Visuals":
+      - "Visuals": tutorials/visuals/index.md
+      - "Callbacks": tutorials/articles/callbacks/index.md
+      - "Using Tables": tutorials/articles/using_tables/index.md
+      - "Long Running Callbacks": tutorials/articles/long_callbacks/index.md
+      - "Real-time data visualization": tutorials/articles/multithreading/index.md
+      - "Stylekit": tutorials/articles/css_style_kit/index.md
+      - "Multi-user": tutorials/articles/multi_user/index.md
+    - "Scenario Management":
+      - "Scenario Management": tutorials/scenario_management/index.md
+      - "Scenarios": tutorials/articles/scenarios/index.md
+      - "Data Nodes": tutorials/articles/the_data_nodes/index.md
+      - "Skippable Tasks": tutorials/articles/skippable_tasks/index.md
+      - "Cycles and Scopes": tutorials/articles/cycles_scopes/index.md
+      - "Job Execution mode": tutorials/articles/job_execution/index.md
+      - "Scenario Comparison": tutorials/articles/scenario_comparison/index.md
+      - "Scenario Subscription": tutorials/articles/scenario_subscription/index.md
+      - "Manage application versions": tutorials/articles/version_management/index.md
+    - "Integration":
+        - "Integration": tutorials/integration/index.md
+        - "Integrating Databricks": tutorials/articles/databricks/index.md
+        - "Integrate Third-Party Components": tutorials/articles/3rd_party_components/index.md
+        - "Taipy Application on Colab with Ngrok": tutorials/articles/colab_with_ngrok/index.md
+        - "Jupyter Notebooks": tutorials/articles/jupyter_notebooks/index.md
+        - "Integration with Dataiku": tutorials/articles/dataiku/index.md
+        - "Integration with IBM Watson Studio": tutorials/articles/ibm_watson_studio/index.md
+    - "Large Data":
+      - "Large Data": tutorials/large_data/index.md
+      - "Using PySpark for Large Data": tutorials/articles/pyspark/index.md
+      - "Large data models vs. Computer memory": tutorials/articles/large_data_models/index.md
+      - "Charts for Large Data": tutorials/articles/decimator/index.md
+
+  - "User Manual":
+    - "About Taipy's User manual": userman/index.md
+
+    - "User interface":
+      - "User interface": userman/gui/index.md
+      - "Pages":
+        - "Pages": userman/gui/pages/index.md
+        - "Navigation": userman/gui/pages/navigate/index.md
+        - "Dynamic page content": userman/gui/pages/partial/index.md
+        - "Dialogs": userman/gui/pages/dialog/index.md
+        - "Panes": userman/gui/pages/pane/index.md
+        - "Advanced": userman/gui/pages/advanced/index.md
+      - "Visual elements": userman/gui/viselements/introduction.md
+      - "Binding variables": userman/gui/binding.md
+      - "Callbacks": userman/gui/callbacks.md
+      - "Styling":
+        - "Styling": userman/gui/styling/index.md
+        - "The Stylekit": userman/gui/styling/stylekit.md
+      - "Notifications": userman/gui/notifications.md
+      - "Extension libraries":
+        - "Extension libraries": userman/gui/extension/index.md
+        - "Static Elements": userman/gui/extension/static_element.md
+        - "Dynamic Elements":
+          - userman/gui/extension/dynamic_element/index.md
+          - "Scalar properties": userman/gui/extension/dynamic_element/scalar_props.md
+        - "List of Values Elements": userman/gui/extension/list_of_values.md
+        - "Tabular Elements": userman/gui/extension/tabular_data.md
+        - "Accessing assets": userman/gui/extension/accessing_assets.md
+        - "Packaging extensions": userman/gui/extension/extension_packaging.md
+
+    - "Scenario features":
+      - "Data integration":
+        - "Data integration": userman/scenario_features/data-integration/index.md
+        - "Data node config": userman/scenario_features/data-integration/data-node-config.md
+        - "Data node usage": userman/scenario_features/data-integration/data-node-usage.md
+        - "Visual elements": userman/scenario_features/data-integration/data-node-vizelmts.md
+        - "Data node history and validity": userman/scenario_features/data-integration/data-node-history.md
+
+      - "Task orchestration":
+        - "Scenarios for task orchestration": userman/scenario_features/task-orchestration/index.md
+        - "Hello world!": userman/scenario_features/task-orchestration/hello-world.md
+        - "Scenario config": userman/scenario_features/task-orchestration/scenario-config.md
+        - "Scenario creation": userman/scenario_features/task-orchestration/scenario-creation.md
+        - "Scenario submission": userman/scenario_features/task-orchestration/scenario-submission.md
+        - "Visual elements": userman/scenario_features/task-orchestration/vizelmts.md
+
+      - "What-if analysis":
+        - "Scenarios for what-if analysis": userman/scenario_features/what-if-analysis/index.md
+        - "Multiple scenarios": userman/scenario_features/what-if-analysis/multiple-scenarios.md
+        - "Recurrent scenarios": userman/scenario_features/what-if-analysis/scenarios-and-cycles.md
+        - "Scenario comparison": userman/scenario_features/what-if-analysis/scenario-comparison.md
+
+      - "Scenario and data management":
+        - "Scenario and data management": userman/scenario_features/sdm/index.md
+        - "Data node":
+          - "Data node": userman/scenario_features/sdm/data-node/index.md
+        - "Task":
+          - "Task": userman/scenario_features/sdm/task/index.md
+        - "Scenario":
+          - "Scenario": userman/scenario_features/sdm/scenario/index.md
+          - "Scenario config": userman/scenario_features/sdm/scenario/scenario-config.md
+        - "Submission":
+          - "Submission": userman/scenario_features/sdm/submission/index.md
+        - "Job":
+          - "Job": userman/scenario_features/sdm/job/index.md
+        - "Sequence":
+          - "Sequence": userman/scenario_features/sdm/sequence/index.md
+        - "Cycle":
+          - "Cycle": userman/scenario_features/sdm/cycle/index.md
+
+      - "Track activities and Trigger actions":
+        - "Track activities and Trigger actions": userman/scenario_features/events/index.md
+        - "Event description": userman/scenario_features/events/events-description.md
+        - "Registration": userman/scenario_features/events/understanding-notifier-register.md
+        - "Examples": userman/scenario_features/events/examples.md
+
+      - "Exposing REST APIs":
+        - "Exposing REST APIs": userman/scenario_features/rest/index.md
+
+    - "Advanced features":
+      - "Configuration":
+        - "Configuration": userman/advanced_features/configuration/index.md
+        - "Configuring the GUI application": userman/advanced_features/configuration/gui-config.md
+        - "Configuring the Core service": userman/advanced_features/configuration/core-config.md
+        - "Configuring jobs execution": userman/advanced_features/configuration/job-config.md
+        - "Configuration checker": userman/advanced_features/configuration/config-checker.md
+        - "Advanced configuration": userman/advanced_features/configuration/advanced-config.md
+
+      - "Versioning system":
+        - "Versioning system": userman/advanced_features/versioning/index.md
+        - "Development mode": userman/advanced_features/versioning/development_mode.md
+        - "Experiment mode": userman/advanced_features/versioning/experiment_mode.md
+        - "Production mode": userman/advanced_features/versioning/production_mode.md
+
+      - "Authentication and authorization":
+        - "Authentication and authorization": userman/advanced_features/auth/index.md
+        - "Authentication": userman/advanced_features/auth/authentication.md
+        - "Authorization and roles": userman/advanced_features/auth/authorization.md
+
+      - "Scheduler":
+        - "Scheduler": userman/advanced_features/scheduling/index.md
+
+    - "Running & deploying":
+      - "Running and deploying Taipy applications": userman/run-deploy/index.md
+
+      - "Running":
+        - "Running a Taipy application": userman/run-deploy/run/index.md
+        - "The run() function": userman/run-deploy/run/running_services.md
+        - "Using an external web server": userman/run-deploy/run/external_web_server.md
+        - "Protect private files": userman/run-deploy/run/protect_files.md
+        - "Running in a Notebook": userman/run-deploy/notebooks.md
+
+      - "Deployment":
+        - "Deploying a Taipy application": userman/run-deploy/deploy/index.md
+        - "On a local machine":
+          - "Deploying locally": userman/run-deploy/deploy/local/index.md
+        - "On Linux servers":
+          - "Deploying on a Linux system": userman/run-deploy/deploy/linux/index.md
+          - "Ubuntu": userman/run-deploy/deploy/linux/ubuntu.md
+          - "RHEL": userman/run-deploy/deploy/linux/redhat.md
+        - "Using Docker":
+          - "Deploying using Docker": userman/run-deploy/deploy/docker/index.md
+          - "For development": userman/run-deploy/deploy/docker/development.md
+          - "For production": userman/run-deploy/deploy/docker/production.md
+        - "On Azure":
+          - "Deploying on Azure": userman/run-deploy/deploy/azure/index.md
+        - "On Heroku":
+          - "Deploying on Heroku": userman/run-deploy/deploy/heroku/index.md
+        - "On Databricks":
+          - "Deploying on Databricks": userman/run-deploy/deploy/databricks/index.md
+
+    - "Ecosystem":
+      - "Command-line interface":
+        - "Command-line interface (CLI)": userman/ecosystem/cli/index.md
+        - "Help": userman/ecosystem/cli/help.md
+        - "Create": userman/ecosystem/cli/create.md
+        - "Run": userman/ecosystem/cli/run.md
+        - "Manage versions": userman/ecosystem/cli/manage-versions.md
+        - "Version": userman/ecosystem/cli/version.md
+
+      - "Taipy Studio":
+        - "Taipy Studio": userman/ecosystem/studio/index.md
+        - "Building configurations":
+          - "Building configurations": userman/ecosystem/studio/config/index.md
+          - "Managing configuration files": userman/ecosystem/studio/config/files.md
+          - "Configuring elements": userman/ecosystem/studio/config/elements.md
+          - "Graph views": userman/ecosystem/studio/config/graphview.md
+          - "Text edition": userman/ecosystem/studio/config/textedition.md
+        - "GUI Markdown support": userman/ecosystem/studio/gui.md
+
+      - "Taipy Designer":
+        - "Taipy Designer": userman/ecosystem/designer/index.md
+      [DESIGNER_CONTENT]
+
+  - "Visual Elements":
+    - "Visual Elements": refmans/gui/viselements/index.md
+    [VISELEMENTS_CONTENT]
+
+  - "Reference":
+    - "About Taipy's Reference manual": refmans/index.md
+    - "Python API":
+      - "Python APIs": refmans/reference/index.md
+      [REFERENCE_CONTENT]
     - "REST API":
-      - manuals/reference_rest/index.md
+      - "REST APIs": refmans/reference_rest/index.md
       [REST_REFERENCE_CONTENT]
     - "GUI Extension API":
-      - manuals/reference_guiext/index.md
-      - "taipy-gui module": manuals/reference_guiext/modules.md
-  - 'Contributing':
-    - 'Contributing to Taipy': 'contributing/contributing.md'
-    - 'Code of conduct': 'contributing/code_of_conduct.md'
-  - 'Credits':
-    - 'Development lead': 'credits/development_lead.md'
-    - 'Contributors': 'credits/contributors.md'
-  - 'Release Notes': 'relnotes.md'
+      - refmans/reference_guiext/index.md
+      - "taipy-gui module": refmans/reference_guiext/globals.md
+
+  - "Gallery":
+    - "Gallery": gallery/index.md
+    - "Finance":
+      - "Finance": gallery/finance/index.md
+      - "Stock Visualization": gallery/articles/stock_visualization/index.md
+      - "Sales Dashboard": gallery/articles/sales_dashboard/index.md
+      - "Commodity Trading": gallery/articles/commodity_trading/index.md
+      - "Fraud Detection": gallery/articles/fraud_detection/index.md
+    - "Decision Support":
+      - "Decision Support": gallery/decision_support/index.md
+      - "Supply Chain - 2 Echelons": gallery/articles/supply_chain/index.md
+      - "Supply Chain - 3 Echelons": gallery/articles/supply_chain_3_echelons/index.md
+      - "QSR Sales Forecasting": gallery/articles/qsr_sales_forecasting/index.md
+      - "Supply Chain Monitoring": gallery/articles/supply_chain_monitoring/index.md
+      - "Production Planning": gallery/articles/production_planning/index.md
+      - "Inventory Forecasting": gallery/articles/inventory_forecasting/index.md
+      - "Drift Detection": gallery/articles/drift_detection/index.md
+      - "Optimize Bar Cut Sizes": gallery/articles/bar_cutting/index.md
+      - "Churn Classification": gallery/articles/churn_classification/index.md
+    - "LLM":
+      - "LLM": gallery/llm/index.md
+      - "LLM Chatbot" : gallery/articles/chatbot/index.md
+      - "Vision ChatBot": gallery/articles/vision_chatbot/index.md
+      - "RAG ChatBot": gallery/articles/rag_chatbot/index.md
+      - "Talk To Taipy": gallery/articles/talk_to_taipy/index.md
+      - "Sentiment Analysis": gallery/articles/sentiment_analysis/index.md
+      - "Tweet Generation": gallery/articles/tweet_generation/index.md
+    - "Visualization":
+      - "Visualization": gallery/visualization/index.md
+      - "COVID Dashboard": gallery/articles/covid_dashboard/index.md
+      - "Industry Distribution": gallery/articles/industry_agglom/index.md
+      - "Image Classification": gallery/articles/image_classif/index.md
+      - "Realtime Pollution Dashboard" : gallery/articles/pollution_sensors/index.md
+    - "Other":
+      - "Other": gallery/other/index.md
+      - "Background Remover": gallery/articles/background_remover/index.md
+      - "Real-time Face Recognition": gallery/articles/face_recognition/index.md
+      - "Movie Genre Selector": gallery/articles/movie_genre_selector/index.md
+
+
 theme:
   name: material
   language: en
-  custom_dir: tools
-  logo: assets/images/taipy-logo.png
+  custom_dir: taipy_theme
+  navigation_depth: 1
   font:
     text: Lato
   icon:
+    logo: taipy-logo-icon
     repo: fontawesome/brands/git-alt
   palette:
     - media: "(prefers-color-scheme: light)"
-      primary: indigo
-      accent: indigo
       scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: deep-orange
-      accent: deep-orange
       scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
   features:
-    - navigation.indexes
-    - navigation.tabs
+    - navigation.sections
     - navigation.tabs.sticky
+    - navigation.tabs
+    - navigation.instant
+    - navigation.path
+    - navigation.indexes
+    - navigation.footer
     - content.tabs.link
+    - content.code.copy
 extra_css:
   - assets/stylesheets/avaiga.css
+extra_javascript:
+  - assets/js/filter.js
 markdown_extensions:
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.mark
@@ -140,7 +337,8 @@ markdown_extensions:
       generic: true
   - pymdownx.highlight
   - pymdownx.superfences
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.details
   - admonition
   - toc:
@@ -154,32 +352,49 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          selection:
-            docstring_style: google
-          rendering:
+          options:
             show_source: false
+            parameter_headings: true
+            merge_init_into_class: false
+            show_root_toc_entry: false
+            show_root_full_path: false
+            show_category_heading: true
+            inherited_members: true
+            filters:
+            - "!^_"
+            - "^__init__$"
+            modernize_annotations: true
+            show_signature_annotations: true
+            separate_signature: true
   - macros:
       module_name: tools/postprocess
 watch:
   - taipy
+  - tools/postprocess.py
 extra:
   social:
-    - icon: fontawesome/brands/twitter
-      # replace with your own tweet link below
-      link: http://www.taipy.io
-      name: Tweet
-    - icon: fontawesome/brands/facebook
-      # replace with your own facebook link below
-      link: http://www.taipy.io
-      name: Facebook
     - icon: fontawesome/brands/github
       link: https://github.com/avaiga/taipy
       name: Github
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/hS95mtBnrj
+      name: Discord
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCYZyGVj-fPgUSITZnsOQoDg
+      name: YouTube
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/Taipy_io
+      name: Tweet
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/taipy-io/
+      name: LinkedIn
     - icon: material/email
       link: "mailto:dev@taipy.io"
   # to enable disqus, uncomment the following and put your disqus id below
   # disqus: disqus_id
   generator: false
+exclude_docs: |
+  *.md_template
 # uncomment the following and put your google tracking id below to enable GA
 #google_analytics:
   #- UA-xxx

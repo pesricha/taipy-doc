@@ -1,3 +1,0 @@
-## Areas on maps
-
-TODO
