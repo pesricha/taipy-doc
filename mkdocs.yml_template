@@ -102,6 +102,7 @@ nav:
           - "Scalar properties": userman/gui/extension/dynamic_element/scalar_props.md
         - "List of Values Elements": userman/gui/extension/list_of_values.md
         - "Tabular Elements": userman/gui/extension/tabular_data.md
+        - "Chart Elements": userman/gui/extension/chart.md
         - "Accessing assets": userman/gui/extension/accessing_assets.md
         - "Packaging extensions": userman/gui/extension/extension_packaging.md
 
