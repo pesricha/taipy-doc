@@ -232,5 +232,6 @@ make your way from one example to the next.
 - [Using scalar properties](dynamic_element/scalar_props.md)
 - [Using List of Values](list_of_values.md)
 - [Using tabular data](tabular_data.md)
+- [Using charts](chart.md)
 - [Accessing assets](accessing_assets.md)
 - [Packaging an element library](extension_packaging.md)
