@@ -93,12 +93,12 @@ For example, this code creates a menu with two options:
         with tgb.Page() as page_2:
             tgb.text("## This is page 2", mode="md")
 
-            pages = {
-                "/": root_page,
-                "Page-1": page_1,
-                "Page-2": page_2
-            }
-            Gui(pages=pages).run()
+        pages = {
+            "/": root_page,
+            "Page-1": page_1,
+            "Page-2": page_2
+        }
+        Gui(pages=pages).run()
     ```
 === "Markdown"
     ```python
